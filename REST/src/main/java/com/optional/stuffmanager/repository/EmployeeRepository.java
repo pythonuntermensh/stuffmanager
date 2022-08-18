@@ -6,4 +6,5 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Transactional
 public interface EmployeeRepository extends MongoRepository<Employee, String> {
+    Employee findByEmail(String email);
 }
