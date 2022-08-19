@@ -5,7 +5,6 @@ import com.optional.stuffmanager.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -32,9 +31,7 @@ public class EmployeeDetailsService implements UserDetailsService {
 
     private Collection<GrantedAuthority> getGrantedAuthority(Employee employee) {
         Collection<GrantedAuthority> authorities = new ArrayList<>();
-        if (employee.getRole().getName().equalsIgnoreCase("admin")) {
-            authorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
-        }
+        authorities.add(new SimpleGrantedAuthority(employee.getRole().toString()));
         return authorities;
     }
 }

@@ -1,6 +1,6 @@
-package com.optional.stuffmanager.job;
+package com.optional.stuffmanager.role;
 
-public enum Job {
+public enum Role {
     CEO("CEO"),
     CTO("CTO"),
     MANAGER("Manager"),
@@ -11,7 +11,7 @@ public enum Job {
 
     private final String fieldName;
 
-    Job(String fieldName) { this.fieldName = fieldName; }
+    Role(String fieldName) { this.fieldName = fieldName; }
 
     public String getFieldName() { return fieldName; }
 }

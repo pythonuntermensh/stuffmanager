@@ -1,7 +1,7 @@
 package com.optional.stuffmanager.util;
 
 import com.optional.stuffmanager.document.Employee;
-import com.optional.stuffmanager.job.Job;
+import com.optional.stuffmanager.role.Role;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -19,9 +19,9 @@ public class EmployeesFilter {
         return this;
     }
 
-    public EmployeesFilter filterRole(Job role) {
+    public EmployeesFilter filterRole(Role role) {
         if (role != null) {
-            employeesList = employeesList.stream().filter(e -> e.getJob() == role).collect(Collectors.toList());
+            employeesList = employeesList.stream().filter(e -> e.getRole() == role).collect(Collectors.toList());
         }
         return this;
     }

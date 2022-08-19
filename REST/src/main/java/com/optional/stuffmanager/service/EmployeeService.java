@@ -4,7 +4,7 @@ import com.optional.stuffmanager.document.Employee;
 import com.optional.stuffmanager.exception.EmployeeAlreadyExistsException;
 import com.optional.stuffmanager.exception.NoSuchEmployeeException;
 import com.optional.stuffmanager.repository.EmployeeRepository;
-import com.optional.stuffmanager.job.Job;
+import com.optional.stuffmanager.role.Role;
 import com.optional.stuffmanager.util.EmployeesFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -23,12 +23,12 @@ public class EmployeeService {
         this.employeeRepository = employeeRepository;
     }
 
-    public List<Employee> findAll(String name, Job role, String email) {
+    public List<Employee> findAll(String name, Role role, String email) {
         EmployeesFilter employeesFilter = new EmployeesFilter(employeeRepository.findAll());
         return new ArrayList<>(employeesFilter.filterName(name).filterRole(role).filterEmail(email).toList());
     }
 
-    public void createNewEmployee(String name, Job role, int salary, String email, String password) throws EmployeeAlreadyExistsException {
+    public void createNewEmployee(String name, Role role, int salary, String email, String password) throws EmployeeAlreadyExistsException {
         if (employeeRepository.findByEmail(email) != null) {
             throw new EmployeeAlreadyExistsException();
         }
@@ -54,7 +54,7 @@ public class EmployeeService {
         employeeRepository.delete(employee);
     }
 
-    public void updateEmployee(String name, Job role, int salary, String email, String password) throws NoSuchEmployeeException {
+    public void updateEmployee(String name, Role role, int salary, String email, String password) throws NoSuchEmployeeException {
         Employee employee = employeeRepository.findByEmail(email);
 
         if (employee == null) {
@@ -62,7 +62,7 @@ public class EmployeeService {
         }
 
         employee.setName(name);
-        employee.setJob(role);
+        employee.setRole(role);
         employee.setSalary(salary);
         employee.setEmail(email);
         employee.setPassword(new BCryptPasswordEncoder().encode(password));

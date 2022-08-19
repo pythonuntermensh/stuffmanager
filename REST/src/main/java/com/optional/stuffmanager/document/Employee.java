@@ -1,6 +1,6 @@
 package com.optional.stuffmanager.document;
 
-import com.optional.stuffmanager.job.Job;
+import com.optional.stuffmanager.role.Role;
 import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -23,7 +23,7 @@ public class Employee {
     @NonNull
     @Getter
     @Setter
-    private Job job;
+    private Role role;
 
     @NonNull
     @Getter
@@ -39,8 +39,4 @@ public class Employee {
     @Getter
     @Setter
     private String password;
-
-    @Getter
-    @Setter
-    private Role role;
 }
