@@ -24,11 +24,6 @@ public class SetupDataLoader implements ApplicationListener<ContextRefreshedEven
             return;
         }
 
-        Employee employee = new Employee("Optional", Role.CEO, 50000, "maxprokofievofficial@mail.ru", "alwayswannadrunk");
-        try {
-            employeeService.createNewEmployee(employee);
-        } catch (EmployeeAlreadyExistsException e) {
-            e.printStackTrace();
-        }
+
     }
 }

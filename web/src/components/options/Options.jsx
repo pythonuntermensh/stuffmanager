@@ -15,15 +15,15 @@ const Options = () => {
         <div className="form__container">
             <label>Filter:</label>
             <form id="filterButton">
-                <div class="form-row">
+                <div className="form-row">
                     <label>Name</label>
                     <input type="text" placeholder="Name" />
                 </div>
-                <div class="form-row">
+                <div className="form-row">
                     <label>Salary</label>
                     <input type="number" min="0" step="1000" placeholder='Salary' />
                 </div>
-                <div class="form-row">
+                <div className="form-row">
                     <label >Role</label>
                     <select>
                         <option selected="">CEO</option>
@@ -34,22 +34,22 @@ const Options = () => {
                         <option>Security Guard</option>
                     </select>
                 </div>
-                <button type="button" class="btn btn-primary">Accept</button>
+                <button type="button" className="btn btn-primary">Accept</button>
             </form>
         </div>
 
         <div className="form__container">
             <label>New Employee</label>
             <form id="createButton">
-                <div class="form-row">
+                <div className="form-row">
                     <label>Name</label>
                     <input type="text" placeholder="Name" />
                 </div>
-                <div class="form-row">
+                <div className="form-row">
                     <label>Salary</label>
                     <input type="number" min="0" step="1000" placeholder='Salary' />
                 </div>
-                <div class="form-row">
+                <div className="form-row">
                     <label >Role</label>
                     <select>
                         <option selected="">CEO</option>
@@ -60,15 +60,15 @@ const Options = () => {
                         <option>Security Guard</option>
                     </select>
                 </div>
-                <div class="form-row">
+                <div className="form-row">
                     <label>Email</label>
                     <input type="email" placeholder="Email" />
                 </div>
-                <div class="form-row">
+                <div className="form-row">
                     <label>Password</label>
                     <input type="password" placeholder="Password" />
                 </div>
-                <button type="submit" class="btn btn-primary">Create</button>
+                <button type="submit" className="btn btn-primary">Create</button>
             </form>
         </div>
     </div>
