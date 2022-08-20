@@ -4,6 +4,7 @@ import com.optional.stuffmanager.document.Employee;
 import com.optional.stuffmanager.role.Role;
 
 import java.util.List;
+import java.util.Locale;
 import java.util.stream.Collectors;
 
 public class EmployeesFilter {
@@ -14,7 +15,7 @@ public class EmployeesFilter {
 
     public EmployeesFilter filterName(String name) {
         if (name != null) {
-            employeesList = employeesList.stream().filter(e -> e.getName().toLowerCase().contains(name)).collect(Collectors.toList());
+            employeesList = employeesList.stream().filter(e -> e.getName().toLowerCase().contains(name.toLowerCase())).collect(Collectors.toList());
         }
         return this;
     }

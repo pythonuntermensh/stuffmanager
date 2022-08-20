@@ -5,7 +5,7 @@ import base64 from 'base-64';
 const App = () => {
   const [data, setData] = useState(null);
 
-  const username = "maxprokofievofficial@mail.ru"
+  const username = "maxprokofievofficial@mail.ru" //TODO: login page
   const password = "alwayswannadrunk"
 
   useEffect(() => {
@@ -26,7 +26,7 @@ const App = () => {
   );});
 
   if (data) {
-    return (<UsersTable users={data}/>)
+    return (<UsersTable users={data} />)
   } else {
     return (<div>Loading...</div>)
   }
