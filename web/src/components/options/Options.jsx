@@ -51,16 +51,14 @@ const Options = props => {
   return (
     <div className="options__container">
         <label>Sort by:</label>
-        <select id="order">
-            <option defaultValue={""}>Id</option>
-            <option>Name</option>
-            <option>Role</option>
-            <option>Salary</option>
+        <select id="order" onChange={e => {props.setOrder(e.target.value)}}>
+            <option>salary</option>
+            <option>name</option>
         </select>
         
         <div className="form__container">
             <label>Filter:</label>
-            <form id="filterButton" onSubmit={(e) => props.setData(filterEmployee(e))} >
+            <form id="filterButton" onSubmit={(e) => filterEmployee(e)} >
                 <div className="form-row">
                     <label>Name</label>
                     <input name="name" type="text" placeholder="Name" onChange={onChange} />
@@ -81,7 +79,7 @@ const Options = props => {
                         <option>SECURITYGUARD</option>
                     </select>
                 </div>
-                <button type="submit" className="btn btn-primary">Accept</button>
+                <button type="accept" className="btn btn-primary">Accept</button>
             </form>
         </div>
 
