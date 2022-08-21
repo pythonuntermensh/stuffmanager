@@ -4,6 +4,14 @@ import User from '../user/User';
 import './userstable.css';
 
 const UsersTable = props => {
+
+  let users = props.users;
+  if (props.order === "salary") {
+        users.sort((a, b) => a.salary > b.salary ? 1 : -1)
+    } else {
+        users.sort((a, b) => a.name > b.name ? 1 : -1)
+    }
+
   return (
     <table className="container">
         <thead className='table__head'>
@@ -16,7 +24,7 @@ const UsersTable = props => {
             </tr>
         </thead>
         <tbody className='table__body'>
-            {props.users.map((user, index) => {
+            {users.map((user, index) => {
                 return <User key={index} index={index} user={user} />
             })}
         </tbody>
